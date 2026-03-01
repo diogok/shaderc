@@ -61,12 +61,6 @@ pub fn build(b: *std.Build) void {
     });
 
     shaderc_mod.addCSourceFiles(.{
-        .root = shaderc_dep.path("libshaderc/include/shaderc"),
-        .files = &.{"shaderc.hpp"},
-        .flags = cpp_flags,
-    });
-
-    shaderc_mod.addCSourceFiles(.{
         .root = shaderc_dep.path("libshaderc_util/src"),
         .files = &.{
             "args.cc",
@@ -87,7 +81,7 @@ pub fn build(b: *std.Build) void {
         .{
             .target = target,
             .optimize = optimize,
-            .strip = .optmize == .ReleaseSmall,
+            .strip = optimize == .ReleaseSmall,
             .link_libc = true,
             .link_libcpp = true,
         },
