@@ -15,5 +15,5 @@
             .path = "vendor/spirv-tools",
         },
     },
-    .paths = .{ "build.zig", "build.zig.zon", "build-version.inc", "README.md" },
+    .paths = .{ "build.zig", "build.zig.zon", "build-version.inc", "README.md", "vendor" },
 }
